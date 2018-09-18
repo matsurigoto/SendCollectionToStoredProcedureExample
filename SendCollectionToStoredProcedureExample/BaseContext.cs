@@ -17,7 +17,7 @@ namespace SendCollectionToStoredProcedureExample
 
         public BaseContext setDatabase(string databaseName)
         {
-            var connectionString = ConfigurationManager.AppSettings[connectionName];
+            var connectionString = ConfigurationManager.ConnectionStrings[connectionName].ConnectionString;
 
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder(connectionString);
             //change the database before creating the new connection
